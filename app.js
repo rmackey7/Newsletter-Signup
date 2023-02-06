@@ -83,9 +83,10 @@ app.post("/failure", function(req, res) {
 
 app.listen(process.env.PORT || 3000, function() {
     console.log("Listening");
-})
+});
 
 //Mailchimp API Key
+//different now in Glitch to stop mailchimp from turning off API Key
 //fa09d536646077d23436ae179b97c799-us18
 
 //Mailchimp List ID
