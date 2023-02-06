@@ -47,7 +47,9 @@ app.post("/", function(req, res) {
         response.on("data", function(data) {
             // console.log(JSON.parse(data));
             console.log("hello");
+            console.log(response.statusCode);
         });
+        
         if (response.statusCode == "200") {
             res.redirect("/success");
             
@@ -56,6 +58,7 @@ app.post("/", function(req, res) {
             
         }
     });
+
 
     request.write(jsonData);
     request.end();
@@ -78,7 +81,7 @@ app.post("/failure", function(req, res) {
     res.redirect("/");
 });
 
-app.listen(3000, function() {
+app.listen(process.env.PORT || 3000, function() {
     console.log("Listening on port 3000");
 })
 
